@@ -80,7 +80,7 @@ out
 
 # Nuxt.js build / generate output
 .nuxt
-dist
+# dist — NOT ignored: n8n Creator Portal requires compiled files in repo
 
 # Gatsby files
 .cache/

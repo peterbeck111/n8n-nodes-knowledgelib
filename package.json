@@ -1,0 +1,53 @@
+{
+  "name": "n8n-nodes-knowledgelib",
+  "version": "0.1.5",
+  "description": "n8n community node for knowledgelib.io — query pre-verified, cited knowledge units for AI agents",
+  "keywords": [
+    "n8n-community-node-package",
+    "n8n",
+    "knowledge",
+    "ai",
+    "knowledgelib",
+    "retrieval"
+  ],
+  "author": {
+    "name": "knowledgelib.io",
+    "email": "hello@knowledgelib.io"
+  },
+  "license": "MIT",
+  "homepage": "https://knowledgelib.io/api",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/peterbeck111/n8n-nodes-knowledgelib"
+  },
+  "main": "dist/nodes/Knowledgelib/Knowledgelib.node.js",
+  "n8n": {
+    "n8nNodesApiVersion": 1,
+    "credentials": [
+      "dist/credentials/KnowledgelibApi.credentials.js"
+    ],
+    "nodes": [
+      "dist/nodes/Knowledgelib/Knowledgelib.node.js"
+    ]
+  },
+  "scripts": {
+    "build": "tsc && node -e \"const fs=require('fs');const p='dist/nodes/Knowledgelib';fs.mkdirSync(p,{recursive:true});fs.copyFileSync('nodes/Knowledgelib/knowledgelib.svg',p+'/knowledgelib.svg')\"",
+    "dev": "tsc --watch",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix .",
+    "prepublishOnly": "npm run build"
+  },
+  "files": [
+    "dist"
+  ],
+  "devDependencies": {
+    "@n8n/node-cli": "^0.19.0",
+    "eslint": "^9.0.0",
+    "n8n-workflow": "^1.0.0",
+    "prettier": "^3.0.0",
+    "typescript": "~5.7.0"
+  },
+  "peerDependencies": {
+    "n8n-workflow": ">=1.0.0"
+  }
+}
